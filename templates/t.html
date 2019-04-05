@@ -1,0 +1,87 @@
+{% include 'header.html'%}
+<main>
+    <div class="container" style="height:1300px;">
+        <div class="row mt-5 pt-5">
+            <div class="col text-center">
+            </div>
+        </div>
+        <div ng-If="data">
+                <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Voter Id</th>
+                            <th scope="col">image taken while you done your voting</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">party</th>
+                            <th scope="col">options</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">{[data.voter_id]}</th>
+                            <td><img src="../static/img/voting_img/{[data.voter_id]}.jpg" height="50" width="50"></td>
+                            <td>{[data.time]}</td>
+                            <td>{[data.party]}</td>
+                            <td><a href="/api/v1/reVote/{[data.voter_id]}">apply for re-vote</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+        </div>
+<div class="container">
+        <div class="row">
+          <div class="col-8">
+              <!-- Material form register -->
+
+            <!-- Form -->
+            <p style="color:red">{[message]}</p>
+            <form class="text-center" style="color: #757575;" enctype="multipart/form-data" ng-submit="submit()">
+                <!-- First name -->
+                <div class="md-form">
+                        <input type="text" ng-model="voterid"  id="materialRegisterFormFirstName" class="form-control">
+                        <label for="materialRegisterFormFirstName">voter id</label>
+                    </div>
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Check</button>
+            </form>
+            <!-- Form -->
+    <!-- Material form register -->
+          </div>
+        </div>
+      </div>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.config(function($interpolateProvider) {
+                $interpolateProvider.startSymbol('{[');
+                $interpolateProvider.endSymbol(']}');
+              });
+app.controller('myctrl', function($scope, $http) {
+    $scope.submit= function(){
+        console.log($scope.voterid);
+        var params= {
+            "voterid":$scope.voterid,
+          };
+          var config = {
+            headers : {'Accept' : 'application/json'}
+            };
+        $http.post('/api/v1/verify', params,config).then(
+            function suc(response){
+                console.log(response.data);
+                if(response.data)
+                {
+                    $scope.data=response.data;
+                }else{
+                    $scope.message="you are not done your voting till now";
+                }
+                
+            }
+        )
+    };
+
+});
+
+
+</script>
+
+
+
+{% include 'footer.html'%}

@@ -1,0 +1,267 @@
+{% include 'header.html'%}
+<main>
+    <div class="container" style="height:1300px;">
+        <div class="row mt-5 pt-5">
+            <div class="col text-center">
+                <h2>voting panel</h2>
+            </div>
+        </div>
+<div class="container">
+        <div class="row">
+          <div class="col" style="background:yellow;">
+          </div>
+          <div class="col-12">
+              <!-- Material form register -->
+<div class="card">
+
+        <h5 class="card-header info-color white-text text-center py-4">
+            <strong>fill the following details </strong>
+           
+        </h5>
+    
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+                <form class="text-center" style="color: #757575;" enctype="multipart/form-data" ng-submit="submit()" method="POST">
+                   <strong style="color:red">{[message]}</strong> 
+                    <div class="form-row">
+                            <div class="col">
+                                <!-- First name -->
+                                <div class="md-form">
+                                    <input type="text" ng-model="voterid"  id="materialRegisterFormFirstName" class="form-control">
+                                    <label for="materialRegisterFormFirstName">voter id</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button data-toggle="modal" data-target="#modalCandidate" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Submit</button>
+                        
+
+                </form>
+
+
+
+
+
+
+
+
+
+
+    
+            </div>
+    
+        </div>
+        <!-- Material form register -->
+              </div>
+              <div class="col" style="background:blue;">
+              </div>
+            </div>
+          </div>
+          <!-- Button trigger modal-->
+<!-- Modal: Candidate list -->
+<div class="modal fade" id="modalCandidate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" ng-if="CandidateCollections"  >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <center><h4 class="modal-title" id="myModalLabel">Choose the candidate whom you want vote for</h4></center>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+            <table class="table table-hover" >
+                    <thead>
+                      <tr>
+                        <!-- <th scope="col">#</th> -->
+                        <th scope="col"><center><b>Candidate</b></center></th>
+                        <th scope="col"><center><b>Party</b></center></th>
+                        <th scope="col"><center><b>Symbol</b></center></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="Candidate in CandidateCollections">
+                            <!-- <th scope="row">{[Candidate]}</th> -->
+                            <td><center><img src="../static/img/candidateimg/{[Candidate.CanPhoto]}" width="42" height="42">
+                               <br> {[Candidate.CanName]}</center></td>
+                            <td><center>{[Candidate.PartyName]}</center></td>
+                            <td>
+                            <a data-toggle="modal" data-target="#Confirm" ng-click="Select(Candidate.Canid)"><center><img src="../static/img/symbolimgs/{[Candidate.Symbollogo]}"  width="42" height="42">
+                               <br><br> {[Candidate.SymbolName]}</center></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                  </table>
+                  <div ng-if="CandidateCollections==None">
+                      <center><b>Please enter the valid Voter id (or) Try again later</b></center>
+                  </div>
+      </div>
+      <!--Footer-->
+
+    </div>
+  </div>
+</div>
+<!-- Modal: Candidate -->
+<div class="modal fade" id="Confirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <center><h4 class="modal-title" id="myModalLabel">Confirm Voting process</h4></center>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+            <table class="table table-hover" >
+                    <thead>
+                      <tr>
+                        <td ><img src="../static/img/candidateimg/{[CandidateData.CanPhoto]}"  width="80" height="80"></td>
+                        <td >&nbsp;&nbsp;&nbsp;<img src="../static/img/symbolimgs/{[CandidateData.Symbolimg]}"  width="80" height="80"></thd>
+                      </tr>
+                      <tr>
+                            <td>Name:</td><td>{[CandidateData.CanName]}</td>
+                      </tr>
+                      <tr>
+                          <td>Gender:</td><td>{[CandidateData.gender]}</td>
+                        </tr>
+                    <tr>
+                            <td>Party Name:</td><td>{[CandidateData.PartyName]}</td>
+                            </tr>
+                    <tr>
+                            <td>Symbole Name:</td><td>{[CandidateData.SymbolName]}</td>
+                            </tr>
+                    <tr>
+                        <td>
+                        <form ng-submit="submitImg()">
+                        <div class="input-group md-form mt-0">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" accept="image/*" capture="user" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"  name='file' onchange="angular.element(this).scope().uploadFile(this.files)">
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose photo</label>
+                                </div>
+                                </div>
+                                <p style="color:red">{[m]}</p>
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">verify</button>                                
+                              </form>
+                              
+                              <p ng-If="veri">
+                        <button ng-click="vote(CandidateData.Candid)" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Confirm</button>
+                      </p>  
+                      </td>
+                    </tr>
+                    </thead>
+
+                    </table>
+      </div>
+      <!--Footer-->
+
+    </div>
+  </div>
+</div>
+<!-- Modal: modalCart -->
+
+<script>
+    var app = angular.module('myApp', []);
+    app.config(function($interpolateProvider) {
+                $interpolateProvider.startSymbol('{[');
+                $interpolateProvider.endSymbol(']}');
+              });
+app.controller('myctrl', function($scope, $window, $http) {
+    // $scope.view=1;
+    $scope.CandidateCollections="";
+
+    $scope.submit= function(){
+        $scope.message="";
+        var params= {
+            "voterid":$scope.voterid,
+          };
+          var config = {
+headers : {'Accept' : 'application/json'}
+};
+        $http.post('/api/v1/voterlogin', params,config).then(
+        function(response)
+        {
+            // var d=response.data[0];
+            // $scope.view=0;
+            console.log(response.data);
+            if(response.data=="2")
+            {
+                $scope.message="you have already done your vote or something Wrong.., please contact nearby person";
+            }
+                if(response.data=="0")
+                {
+                    $scope.message="please enter valid voter id or try again later";
+                }else
+                {
+            $scope.CandidateCollections=response.data;
+                }
+
+        });
+
+    };
+    $scope.Select= function(CanId){
+        var data="";
+var candidate=$scope.CandidateCollections;
+    for (x in candidate) {
+    var i=candidate[x];
+
+    if(i['Canid']==CanId)
+    {
+        data={"CanName":i['CanName'],"Candid":i['Canid'],"CanPhoto":i['CanPhoto'],"PartyName":i['PartyName'],"SymbolName":i["SymbolName"],"Symbolimg":i["Symbollogo"],"gender":i['CanGender']}
+    }
+    }
+    console.log(data);
+    $scope.CandidateData=data;
+    };
+
+    $scope.vote= function(CanId){
+        var params= {
+            "voterid":$scope.voterid,
+            "CanId":CanId
+          };
+          console.log(params);
+          var config = {
+headers : {'Accept' : 'application/json'}
+};
+        $http.post('/api/v1/Confirmvote', params,config);
+        $window.location.reload();
+    };
+
+    $scope.uploadFile = function(files) {
+            $scope.file = new FormData();
+            $scope.file.append("file", files[0],$scope.voterid+".jpg");
+        };
+$scope.submitImg= function(){
+$http.post('/api/v1/check', $scope.file, {
+    
+           headers: {'Content-Type': undefined },
+           transformRequest: angular.identity
+          }).then(
+            function su(response)
+            {
+              $scope.veri=response.data;
+              $scope.m=" ";
+
+            },function(response)
+          {
+            $scope.m="please take an image.... to confirm your vote";
+          }
+          )
+
+};
+});
+
+
+</script>
+
+
+
+
+{% include 'footer.html'%}

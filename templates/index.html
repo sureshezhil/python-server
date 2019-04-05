@@ -1,0 +1,114 @@
+{% include 'header.html'%}
+<a href="../static/img/assembly_cdoe.png">Assembly code in tamil nadu</a>
+<hr>
+<a href="../static/img/language.png">Language code </a>
+          <div class="container">
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-lg-8">
+                        <form ng-submit="submit()">
+                                <input type="text" ng-model="district" placeholder="district">
+                                <input type="text" ng-model="post" placeholder="post">
+                                <input type="number" ng-model="acnumber" placeholder="Assembly code">
+                                <button>Submit</button>
+                    </form>
+                <div id="piechart" style="border:2ch"></div>
+                  </div>
+                  <div class="col-6 col-lg-4"></div>
+                </div>
+                <div class="row">
+                  <div class="col-6 col-sm-4"></div>
+                  <div class="col-6 col-sm-4"></div>
+                  <div class="col-6 col-sm-4"></div>
+                </div>
+              </div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+
+</script>
+
+
+<script>
+        var app = angular.module('myApp', []);
+        app.config(function($interpolateProvider) {
+                    $interpolateProvider.startSymbol('{[');
+                    $interpolateProvider.endSymbol(']}');
+                  });
+    app.controller('myctrl', function($scope, $http) {
+        $scope.submit= function(){
+            var params= {
+                "district":$scope.district,
+                "post":$scope.post,
+                "acnumber":$scope.acnumber
+              };
+              var config = {
+    headers : {'Accept' : 'application/json'}
+    };
+
+            $http.post('/api/v1/retrivedata', params,config).then(
+            function(response)
+            {
+            });
+        };
+
+        $scope.info= function(){
+            var params= {
+                "voterid":$scope.voterid,
+              };
+              var config = {
+    headers : {'Accept' : 'application/json'}
+    };
+
+            $http.post('/api/v1/ElectionProcess', params,config).then(
+            function(response)
+            {
+                var d=response.data;
+                console.log(d);
+                google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable(d);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'PERCENTAGE OF PARTY LEADING', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+     });
+    
+        };
+        
+        $scope.info();
+    });
+    
+
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/js/mdb.min.js"></script>
+</html>

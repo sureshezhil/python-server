@@ -1,0 +1,212 @@
+{% include 'header.html'%}
+<main>
+    <div class="container" style="height:1300px;">
+        <div class="row mt-5 pt-5">
+            <div class="col text-center">
+                <h2>Voter Id Registration page</h2>
+            </div>
+        </div>
+<div class="container">
+        <div class="row">
+          <div class="col" >
+          </div>
+          <div class="col-10">
+              <!-- Material form register -->
+<div class="card">
+
+        <h5 class="card-header info-color white-text text-center py-4">
+            <strong>Voter Id Registration</strong>
+        </h5>
+    
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+    
+            <!-- Form -->
+            <form class="text-center" style="color: #757575;" enctype="multipart/form-data" ng-submit="submit()">
+                
+                <div class="form-row">
+                    <div class="col">
+                        <!-- First name -->
+                        <div class="md-form">
+                            <input type="text" ng-model="fname" id="materialRegisterFormFirstName" class="form-control">
+                            <label for="materialRegisterFormFirstName">First name</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- Last name -->
+                        <div class="md-form">
+                            <input type="text" ng-model="lname" id="materialRegisterFormLastName" class="form-control">
+                            <label for="materialRegisterFormLastName">Last name</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="md-form mt-0">
+                        <input type="text" ng-model="fathername" id="materialRegisterFormEmail" class="form-control">
+                        <label >Father's Name</label>
+                    </div>
+                <div class="md-form mt-0">
+                        <input type="number" ng-model="aadharid" ng-change="ValidateAdhar(aadharid)" id="materialRegisterFormEmail" class="form-control">
+                        <label >Aadhar ID</label>
+                        <p id="aadharmessage" style="color:red"></p>
+                    </div>
+                <div class="input-group md-form mt-0">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"  name='file' onchange="angular.element(this).scope().uploadFile(this.files)" required>
+                            <label class="custom-file-label" for="inputGroupFile01">Choose photo</label>
+                        </div>
+                        </div>
+                        <div class="md-form mt-0">
+                              <select ng-model="gender" class="custom-select custom-select-sm" style="color:grey">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Others</option>
+                              </select>
+                            </div>
+                <!-- Phone number -->
+
+                <div class="md-form">
+                    <input type="number" ng-model="mobilenumber" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                    <label for="materialRegisterFormPhone">Phone number</label>
+                </div>
+                <div class="md-form mt-0">
+                        <input type="date" ng-model="dob" style="color:grey" id="materialRegisterFormEmail" class="form-control">
+                        <label >Date of Birth</label>
+                    </div>
+                                <!--Address-->
+            <div class="md-form">
+                    <textarea id="materialContactFormMessage" ng-model="address" class="form-control md-textarea" rows="3"></textarea>
+                    <label for="materialContactFormMessage">Address</label>
+                </div>
+                <div class="md-form">
+                            <input type="number" ng-model="acnumber" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" required>
+                            <label for="materialRegisterFormPhone">Assembly Constituency number</label>
+                        </div>
+                        <div class="form-row">
+                          <div  class="col-md-6 mb-3 md-form">
+                            <input type="text" ng-model="thaluk" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                            <label for="materialRegisterFormPhone">Thaluk</label>
+                        </div>
+                        <div class="col-md-6 mb-3 md-form">
+                            <label for="validationCustom042">Post</label>
+                            <input type="text" class="form-control" ng-model="postward" required>
+                          </div>
+                      </div>
+                        <div class="form-row">
+                                <div class="col-md-6 mb-3 md-form">
+                                  <label for="validationCustom032">District</label>
+                                  <input type="text" ng-model="district" class="form-control"  >
+                                </div>
+                                <div class="col-md-3 mb-3 md-form">
+                                  <label for="validationCustom042">State</label>
+                                  <input type="text" class="form-control" ng-model="state" >
+                                </div>
+                                <div class="col-md-3 mb-3 md-form">
+                                  <label for="validationCustom052">Pin code</label>
+                                  <input type="text" ng-model="pincode" class="form-control">
+                                </div>
+                              </div>
+                <!-- Sign up button -->
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+            </form>
+            <!-- Form -->
+
+        </div>
+    
+    </div>
+    <!-- Material form register -->
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+
+
+<script>
+    var app = angular.module('myApp', []);
+app.controller('myctrl', function($scope,$window, $http) {
+    $scope.uploadFile = function(files) {
+            $scope.file = new FormData();
+            $scope.file.append("file", files[0],"voter_"+$scope.fname+$scope.lname+"_"+$scope.fathername+"_"+$scope.address+"_"+".jpg");
+        };
+$scope.ValidateAdhar=function(aadharid){
+    var id=aadharid.toString();
+    if(id.length==12)
+    { 
+        var config = {
+        headers : {'Accept' : 'application/json'}
+        };
+        $http.get('/api/v1/GetAadharinfo/'+id,config).then (
+            function (response){
+                console.log(response);
+                data=response.data;
+                if(response.data)
+                {
+                document.getElementById("aadharmessage").innerHTML =" "; 
+                $scope.fname=data['fname'];
+                $scope.lname=data['lname'];
+                $scope.fathername=data['fathername'];
+                $scope.gender=data['gender'];
+                $scope.mobilenumber=data['mobilenumber'];
+                $scope.dob=new Date(data['dob']);
+                $scope.address=data['address'];
+                $scope.pincode=data['pincode'];
+                $scope.state=data['state'];
+                $scope.district=data['district'];
+                $scope.thaluk=data['thaluk'];
+                }
+            },
+            function(response){
+                document.getElementById("aadharmessage").innerHTML ="invaild aadhar Id ... please check it or try again later";
+            }
+        );
+    }else{
+        document.getElementById("aadharmessage").innerHTML ="please Enter  invalid 12 digit aadhar Id";
+
+    }
+
+
+};
+$scope.submit= function(){
+$http.post('/api/v1/CreateNewVoterId', $scope.file, {
+    
+           headers: {'Content-Type': undefined },
+           transformRequest: angular.identity
+          });
+          var params= {
+            "fname":$scope.fname,
+            "lname":$scope.lname,
+            "fathername":$scope.fathername,
+            "gender":$scope.gender,
+            "mobilenumber":$scope.mobilenumber,
+            "dob":$scope.dob,
+            "address":$scope.address,
+            "pincode":$scope.pincode,
+            "acnumber":$scope.acnumber,
+            "state":$scope.state,
+            "postward":$scope.postward,
+            "district":$scope.district,
+            "thaluk":$scope.thaluk,
+            "photo":"voter_"+$scope.fname+$scope.lname+"_"+$scope.fathername+"_"+$scope.address+"_"+".jpg"
+          };
+          console.log(params);
+          var config = {
+headers : {'Accept' : 'application/json'}
+};
+$http.post('/api/v1/CreateNewVoterId', params,config);
+$window.location.reload();
+
+};
+
+
+
+});
+
+
+</script>
+
+
+
+{% include 'footer.html'%}

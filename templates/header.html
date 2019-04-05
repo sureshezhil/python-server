@@ -1,0 +1,116 @@
+<html>
+<head>
+   <title> Smart Voting system</title>
+   <link rel="shortcut icon" href="../static/sample_logo/facv.png" />
+</head>
+<!-- Font Awesome -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.4/css/mdb.min.css" rel="stylesheet">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+@media screen and (max-width: 600px) {
+  #title{
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
+@media screen and (min-width: 600px) {
+  #desktop{
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
+</style>
+<body ng-app="myApp" ng-controller="myctrl"  style="background-image:url(../static/7.jpg)">
+<!--Main Navigation-->
+{% if role=="admin"%}
+
+<header>
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark blue scrolling-navbar">
+            <a class="navbar-brand" href="#"><strong>Admin panel</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/VoterIdRegister">New Voter Id</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/CandiadteRegister">New Candidate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=" /aadharregisterpage">New Aadhar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/QueriesForVoters">Check the votes</a>
+                    </li>
+                </ul>
+                {% include "translate.html"%}
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+    </header>
+    <!--Main Navigation-->
+    
+    <!--Main Layout-->
+{% endif %}
+{% if role !="admin" %}
+<header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark default-color">
+          <a class="navbar-brand" href="/" id="title"><strong>Smart and Secure Voting System</strong></a>
+          <a class="navbar-brand" href="/"id="desktop"><strong>SSVS</strong></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+              <li class="nav-item">
+                <a class="nav-link" href="/adminlogin">Admin Panel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/votingpanel">Voting Panel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/candidatepanel">Candidate Panel</a>
+              </li>
+            </ul>
+            {% include "translate.html"%}
+          </div>
+        </nav>
+      
+      </header>
+      <!--Main Navigation-->
+{% endif %}

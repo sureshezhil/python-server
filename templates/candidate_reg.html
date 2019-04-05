@@ -1,0 +1,173 @@
+{% include 'header.html'%}
+<main>
+    <div class="container" style="height:1300px;">
+        <div class="row mt-5 pt-5">
+            <div class="col text-center">
+                <h2>Candidate Registration page</h2>
+            </div>
+        </div>
+<div class="container">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col-8">
+              <!-- Material form register -->
+<div class="card">
+
+        <h5 class="card-header info-color white-text text-center py-4">
+            <strong>Sign up</strong>
+        </h5>
+    
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+    
+            <!-- Form -->
+            <form class="text-center" style="color: #757575;" enctype="multipart/form-data" ng-submit="submit()">
+                {{message}}
+                <div class="form-row">
+                    <div class="col">
+                        <!-- First name -->
+                        <div class="md-form">
+                            <input type="text" ng-model="fname" id="materialRegisterFormFirstName" class="form-control">
+                            <label for="materialRegisterFormFirstName">First name</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- Last name -->
+                        <div class="md-form">
+                            <input type="text" ng-model="lname" id="materialRegisterFormLastName" class="form-control">
+                            <label for="materialRegisterFormLastName">Last name</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="md-form">
+                    <input type="text" ng-model="voterid" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                    <label for="materialRegisterFormPhone">voter id</label>
+                </div>
+                <div class="input-group md-form mt-0">
+                        <div class="input-group-prepend">
+                            Picture of Candidate:
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"  name='candidatefile' onchange="angular.element(this).scope().uploadFile(this.files)">
+                            <label class="custom-file-label" for="inputGroupFile01">Choose photo</label>
+                        </div>
+                        </div>
+                        <div class="md-form mt-0">
+                              <select ng-model="party" class="custom-select custom-select-sm" style="color:grey">
+                                <option value="A.B.C">A.B.C</option>
+                                <option value="X.Y.Z">X.Y.Z</option>
+                                <option value="P.Q.R.S">P.Q.R.S</option>
+                                <option value="Autonomy">Autonomy</option>
+                              </select>
+                            </div>
+                            <div class="input-group md-form mt-0">
+                                <div class="input-group-prepend">
+                                    Symbol:
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01"  name='symbolfile' onchange="angular.element(this).scope().uploadsymbolFile(this.files)">
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose photo</label>
+                                </div>
+                                </div>
+                                <div class="md-form mt-0">
+                                    <input type="text" ng-model="symbolname" id="materialRegisterFormEmail" class="form-control">
+                                    <label >Symbol name</label>
+                                </div>
+                <!-- Phone number -->
+
+                <div class="md-form">
+                    <input type="number" ng-model="mobilenumber" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                    <label for="materialRegisterFormPhone">Phone number</label>
+                </div>
+                <div class="md-form">
+                    <input type="number" ng-model="acnumber" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                    <label for="materialRegisterFormPhone">Assembly Constituency number</label>
+                </div>
+                <div class="md-form">
+                            <input type="text" ng-model="thaluk" id="materialRegisterFormPhone" class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock">
+                            <label for="materialRegisterFormPhone">Thaluk</label>
+                        </div>
+                        <div class="form-row">
+                                <div class="col-md-3 mb-3 md-form">
+                                  <label for="validationCustom032">District</label>
+                                  <input type="text" ng-model="district" class="form-control" id="validationCustom032" >
+                                </div>
+                                <div class="col-md-3 mb-3 md-form">
+                                    <label for="validationCustom032">Post</label>
+                                    <input type="text" ng-model="postward" class="form-control" id="validationCustom032">
+                                  </div>
+                                <div class="col-md-3 mb-3 md-form">
+                                  <label for="validationCustom042">State</label>
+                                  <input type="text" class="form-control" ng-model="state" id="validationCustom042">
+                                </div>
+                                <div class="col-md-3 mb-3 md-form">
+                                  <label for="validationCustom052">Zip</label>
+                                  <input type="text" ng-model="pincode" class="form-control" id="validationCustom052">
+                                </div>
+                              </div>
+                <!-- Sign up button -->
+                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+            </form>
+            <!-- Form -->
+
+        </div>
+    
+    </div>
+    <!-- Material form register -->
+          </div>
+          <div class="col" >
+          </div>
+        </div>
+      </div>
+      
+<script>
+    var app = angular.module('myApp', []);
+app.controller('myctrl', function($scope,$http) {
+    $scope.uploadFile = function(files) {
+            $scope.file = new FormData();
+            $scope.file.append("file", files[0],"C_"+$scope.voterid+"_"+"c"+'.jpg' );
+        };
+        $scope.uploadsymbolFile = function(files) {
+            $scope.symbolfile = new FormData();
+            $scope.symbolfile.append("file", files[0],"S_"+$scope.voterid+"_"+"s"+'.jpg' );
+        };
+$scope.submit= function(){
+$http.post('/api/v1/CreateNewCandidate', $scope.file, {
+           headers: {'Content-Type': undefined },
+           transformRequest: angular.identity
+          });
+
+$http.post('/api/v1/CreateNewCandidate', $scope.symbolfile, {
+    
+    headers: {'Content-Type': undefined },
+    transformRequest: angular.identity
+   });
+          var params= {
+            "fname":$scope.fname,
+            "lname":$scope.lname,
+            "party":$scope.party,
+            "symbolname":$scope.symbolname,
+            "mobilenumber":$scope.mobilenumber,
+            "pincode":$scope.pincode,
+            "district":$scope.district,
+            "state":$scope.state,
+            "thaluk":$scope.thaluk,
+            "postward":$scope.postward,
+            "voterid":$scope.voterid,
+            "acnumber":$scope.acnumber,
+            "photo":"C_"+$scope.voterid+"_"+"c"+'.jpg' ,
+            "symbol":"S_"+$scope.voterid+"_"+"s"+'.jpg'  
+          };
+          console.log(params);
+          var config = {
+headers : {'Accept' : 'application/json'}
+};
+$http.post('/api/v1/CreateNewCandidate', params,config);
+};
+
+});
+</script>
+{% include 'footer.html'%}
