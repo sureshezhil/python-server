@@ -134,7 +134,7 @@
 app.controller('myctrl', function($scope,$window, $http) {
     $scope.uploadFile = function(files) {
             $scope.file = new FormData();
-            $scope.file.append("file", files[0],$scope.fname+$scope.lname+$scope.address+$scope.fathername+".jpg");
+            $scope.file.append("file", files[0],"aadhar_"+$scope.fname+$scope.lname+"_"+$scope.fathername+"_"+$scope.ditrict+".jpg");
         };
 $scope.submit= function(){
 $http.post('/api/v1/CreateNewAdhar', $scope.file, {
@@ -153,7 +153,7 @@ $http.post('/api/v1/CreateNewAdhar', $scope.file, {
             "state":$scope.state,
             "district":$scope.district,
             "thaluk":$scope.thaluk,
-            "photo":$scope.fname+$scope.lname+$scope.address+$scope.fathername+".jpg",
+            "photo":"aadhar_"+$scope.fname+$scope.lname+"_"+$scope.fathername+"_"+$scope.ditrict+".jpg",
           };
           var config = {
 headers : {'Accept' : 'application/json'}

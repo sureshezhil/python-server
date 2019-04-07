@@ -21,6 +21,14 @@ now = datetime.datetime.now()
 def login():
 	return render_template("index.html")
 
+@app.route("/dataview")
+def view():
+	return render_template("dataview.html")
+
+@app.route("/api/v1/details",methods=['POST'])
+def detailinfo():
+    candidate,aadhar,voter=analysis.getinfo()
+    return jsonify({"aadhar":aadhar,"voter":voter,"candidate":candidate})
 @app.route("/VoterIdRegister")
 def VoterIdRegister():
 	return render_template("voter_reg.html",role="admin")

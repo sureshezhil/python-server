@@ -1,0 +1,207 @@
+{% include 'header.html'%}
+<style>
+    body {font-family: Arial;}
+    
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+    
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+    
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    </style>
+
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Aadhar')">Aadhar Details</button>
+  <button class="tablinks" onclick="openCity(event, 'VoterId')">Voter Id list</button>
+  <button class="tablinks" onclick="openCity(event, 'Candidate')">Candidate list</button>
+  <button onclick="myFunction()"  class="tablinks">Generate pdf or print</button>
+</div>
+
+
+
+<script>
+function myFunction() {
+  window.print();
+}
+</script>
+<div id="Aadhar" class="tabcontent">
+  <h3>list of the Aadhar info</h3>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Aadhar Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">D.O.B</th>
+            <th scope="col">Father Name</th>
+            <th scope="col">District</th>
+            <th scope="col">Taluka</th>
+            <th scope="col">State</th>
+          </tr>
+
+        </thead>
+        <tbody>
+            <tr ng-repeat="a in aadhar">
+                
+                <td>{[a.id]}</td>
+                <td>{[a.name]}</td>
+                <td><img src="../static/img/aadharimg/{[a.image]}" alt="{[a.name]}" height="50",width="50"></td>
+                <td>{[a.dob]}</td>
+                <td>{[a.fathername]}</td>
+                <td>{[a.district]}</td>
+                <td>{[a.taluk]}</td>
+                <td>{[a.state]}</td>
+                
+            </tr>
+        </tbody>
+      </table>
+</div>
+
+<div id="VoterId" class="tabcontent">
+  <h3>list of the Eligible Voter's </h3>
+  <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Voter Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">D.O.B</th>
+            <th scope="col">Father Name</th>
+            <th scope="col">Post</th>
+            <th scope="col">Assembly Constituency Number</th>
+            <th scope="col">District</th>
+            <th scope="col">Taluka</th>
+            <th scope="col">State</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="v in voter">
+                
+                <td>{[v.voterid]}</td>
+                <td>{[v.name]}</td>
+                <td><img src="../static/img/voterimg/{[v.image]}" alt="{[v.name]}" height="50",width="50"></td>
+                <td>{[v.dob]}</td>
+                <td>{[v.fathername]}</td>
+                <td>{[v.post]}</td>
+                <td><cente>{[v.acnumber]}</cente></td>
+                <td>{[v.district]}</td>
+                <td>{[v.taluk]}</td>
+                <td>{[v.state]}</td>
+                
+            </tr>
+        </tbody>
+      </table>
+</div>
+<div id="Candidate" class="tabcontent">
+    <h3>list of the Candidate </h3>
+    <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Symbol Name</th>
+                <th scope="col">Party</th>
+                <th scope="col">Father Name</th>
+                <th scope="col">Post</th>
+                <th scope="col">Assembly Constituency Number</th>
+                <th scope="col">District</th>
+                <th scope="col">Taluka</th>
+                <th scope="col">State</th>
+              </tr>
+    
+            </thead>
+            <tbody>
+                <tr ng-repeat="c in candidate">
+                    <td>{[c.name]}</td>
+                    <td><img src="../static/img/candidateimg/{[c.image]}" alt="{[c.name]}" height="50",width="50"></td>
+                    <td><img src="../static/img/symbolimgs/{[c.symbol]}" alt="{[c.symbolname]}" height="50",width="50"></td>
+                    <td>{[c.symbolname]}</td>
+                    <td>{[c.party]}</td>
+                    <td>{[c.fathername]}</td>
+                    <td>{[c.post]}</td>
+                    <td><cente>{[c.acnumber]}</cente></td>
+                    <td>{[c.district]}</td>
+                    <td>{[c.taluk]}</td>
+                    <td>{[c.state]}</td>
+                    
+                </tr>
+            </tbody>
+          </table> 
+  </div>
+<script>
+    var app = angular.module('myApp', []);
+    app.config(function($interpolateProvider) {
+                $interpolateProvider.startSymbol('{[');
+                $interpolateProvider.endSymbol(']}');
+              });
+    app.controller('myctrl', function($scope, $http) {
+        var params= {
+            "voterid":$scope.voterid,
+          };
+          var config = {
+            headers : {'Accept' : 'application/json'}
+            };
+        $http.post('/api/v1/details', params,config).then(
+            function suc(response){
+                    data=response.data;
+                    console.log(data['voter']);
+                    $scope.aadhar=data["aadhar"];
+                    $scope.voter=data["voter"];
+                    $scope.candidate=data["candidate"];
+            }
+        )    
+    });
+</script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+
+
+{% include 'footer.html'%}

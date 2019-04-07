@@ -196,7 +196,34 @@ class analysis:
         con.commit()
         con.close()
         return 1
-
+    def getinfo(*data):
+        con=MySQLdb.connect("localhost","root","test","SmartProject")
+        obj=con.cursor()
+        sql="SELECT * From candidate_list"
+        obj.execute(sql)
+        candidate=obj.fetchall()
+        can=[]
+        for i in candidate:
+            d={"name":i[1],"image":i[2],"symbolname":i[5],"symbol":i[6],"party":i[7],"pincode":i[12],"state":i[11],
+            "acnumber":i[16],"post":i[15],"district":i[9],"taluk":i[10],"fathername":i[14],"gender":i[4],"dob":i[3]}
+            can.append(d)
+        sql="SELECT * From ECdb_table"
+        obj.execute(sql)
+        voter=obj.fetchall()
+        vot=[]
+        for i in voter:
+            d={"name":i[1],"voterid":i[5],"image":i[2],"district":i[11],"taluk":i[12],"gender":i[4],
+            "fathername":i[3],"post":i[9],"acnumber":i[10],"state":i[13],"dob":i[6]
+            }
+            vot.append(d)
+        sql="SELECT * From aadhardb_table"
+        obj.execute(sql)
+        aadhar=reversed(obj.fetchall())
+        aadh=[]
+        for i in aadhar:
+            d={"name":i[1]+" "+i[2],"image":i[3],"id":i[7],"fathername":i[4],"gender":i[6],"district":i[9],"taluk":i[10],"dob":i[5],"pincode":i[12],"state":i[11]}
+            aadh.append(d)
+        return can,aadh,vot
 
 
 

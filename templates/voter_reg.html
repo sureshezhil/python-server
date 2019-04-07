@@ -129,7 +129,7 @@
 app.controller('myctrl', function($scope,$window, $http) {
     $scope.uploadFile = function(files) {
             $scope.file = new FormData();
-            $scope.file.append("file", files[0],"voter_"+$scope.fname+$scope.lname+"_"+$scope.fathername+"_"+$scope.address+"_"+".jpg");
+            $scope.file.append("file", files[0],"voter_"+$scope.fname+$scope.lname+"_"+$scope.fathername+"_"+$scope.district+"_"+".jpg");
         };
 $scope.ValidateAdhar=function(aadharid){
     var id=aadharid.toString();
@@ -189,14 +189,14 @@ $http.post('/api/v1/CreateNewVoterId', $scope.file, {
             "postward":$scope.postward,
             "district":$scope.district,
             "thaluk":$scope.thaluk,
-            "photo":"voter_"+$scope.fname+$scope.lname+"_"+$scope.fathername+"_"+$scope.address+"_"+".jpg"
+            "photo":"voter_"+$scope.fname+$scope.lname+"_"+$scope.fathername+"_"+$scope.district+"_"+".jpg"
           };
           console.log(params);
           var config = {
 headers : {'Accept' : 'application/json'}
 };
 $http.post('/api/v1/CreateNewVoterId', params,config);
-$window.location.reload();
+// $window.location.reload();
 
 };
 

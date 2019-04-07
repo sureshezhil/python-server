@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 05, 2019 at 09:38 PM
+-- Generation Time: Apr 07, 2019 at 10:42 PM
 -- Server version: 5.7.22-0ubuntu0.17.10.1
 -- PHP Version: 7.1.17-0ubuntu0.17.10.1
 
@@ -48,21 +48,27 @@ CREATE TABLE `aadhardb_table` (
 --
 
 INSERT INTO `aadhardb_table` (`id`, `first_name`, `last_name`, `photo`, `father_name`, `dob`, `gender`, `unique_id`, `address`, `district`, `thaluk`, `state`, `pin_code`, `phone`) VALUES
-(1, 'suresh', 'r', 'sureshrA2_streatrajendhiran.jpg', 'rajendhiran', '1995-12-05', 'Male', 746126330001, 'A2 streat', 'Villupuram', 'Villupuram', 'Tamil Nadu', 605108, 8940900902),
-(2, 'Ezhil', 'R', 'EzhilR#3641,mariyamman koil stRam.jpg', 'Ram', '1994-12-08', 'Male', 192115840002, '#364/1,mariyamman koil st', 'Villupuram', 'Villupuram', 'Tamil Nadu', 605108, 8940900903),
-(3, 'Ragini', 'R', 'RaginiR#3641,mariyamman koil st,thansingupalaymrajendhiran.jpg', 'rajendhiran', '1994-12-08', 'Female', 325467390003, '#364/1,mariyamman koil st,thansingupalaym', 'Villupuram', 'Villupuram', 'Tamil Nadu', 605108, 8940900905),
-(4, 'Chitra', 'R', 'ChitraR#3641,mariyamman koil st,thansingupalaymrajendhiran.jpg', 'rajendhiran', '1977-12-08', 'Female', 388722330004, '#364/1,mariyamman koil st,thansingupalaym', 'Villupuram', 'Villupuram', 'Tamil Nadu', 605108, 8940900904),
-(6, 'Rajendhiran', 'R', 'RajendhiranR#3641,mariyamman koil st,thansingupalaymRam.jpg', 'Ram', '1967-12-08', 'Male', 561197700061, '#364/1,mariyamman koil st,thansingupalaym', 'Villupuram', 'Villupuram', 'Tamil Nadu', 605108, 89409009046),
-(7, 'Ram', 'S', 'RamS#364,mariyamman koil st,thansingupalaymSelva.jpg', 'Selva', '1967-03-10', 'Male', 726537310007, '#364,mariyamman koil st,thansingupalaym', 'Villupuram', 'Villupuram', 'Tamil Nadu', 605108, 8940900893),
-(8, 'Mohan', 'M', 'MohanM#364,mariyamman koil st,pudupuncholaikuppamMalai.jpg', 'Malai', '1998-03-10', 'Male', 409728850008, '#364,mariyamman koil st,pudupuncholaikuppam', 'cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 8940900893),
-(9, 'Manikandan', 'M', 'ManikandanM#364,mariyamman koil st,pudupuncholaikuppamMalai.jpg', 'Malai', '1998-03-10', 'Male', 162688200091, '#364,mariyamman koil st,pudupuncholaikuppam', 'cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 8940900893),
-(10, 'jayakumar', 'J', 'jayakumarJ#364,mariyamman koil st,pudupuncholaikuppamJaganathan.jpg', 'Jaganathan', '1998-03-10', 'Male', 300674530010, '#364,mariyamman koil st,pudupuncholaikuppam', 'cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 894090089),
-(11, 'Sugupathy', 'K', 'SugupathyK#364,mariyamman koil st,pudupuncholaikuppamKathavarayan.jpg', 'Kathavarayan', '1995-03-10', 'Male', 106098890011, '#364,mariyamman koil st,pudupuncholaikuppam', 'cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 894090089),
-(12, 'maha', 'M', 'mahaM#364,mariyamman koil st,pudupuncholaikuppamMalai.jpg', 'Malai', '1995-03-10', 'Female', 106589340012, '#364,mariyamman koil st,pudupuncholaikuppam', 'cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 894090089),
-(13, 'Mohanraj', 'M', 'MohanrajMA2 streatmalayalathan.jpg', 'malayalathan', '1999-06-19', 'Male', 490505260013, 'A2 streat', 'Cuddalore', 'cuddalore', 'Tamil Nadu', 605108, 8940900902),
-(14, 'RajaSima', 'P', 'RajaSimaPmariyamman koil streetParthipan.jpg', 'Parthipan', '1998-11-30', 'Male', 567418370014, 'mariyamman koil street', 'Villupuram', 'Vikaravandi', 'Tamil Nadu', 605102, 89509009000),
-(15, 'rajmohan', 'm', 'rajmohanmmt streetjevva.jpg', 'jevva', '1984-03-03', 'Male', 628807420015, 'mt street', 'Villupuram', 'Vikaravandi', 'Tamil Nadu', 605102, 9998988999),
-(16, 'kutty', 'm', 'kuttymmtstrrranjith.jpg', 'ranjith', '1992-02-03', 'Male', 592484270016, 'mtstrr', 'Villupuram', 'Vikaravandi', 'Tamil Nadu', 605102, 9798785859);
+(21, 'suresh', 'R', 'aadhar_sureshr_Rajendhiran.jpg', 'Rajendhiran', '1995-12-04', 'Male', 764392950021, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902),
+(22, 'Chitra', 'R', 'aadhar_Chitrar_Rajendhiran.jpg', 'Rajendhiran', '9999-12-04', 'Female', 943540270022, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902),
+(23, 'lakshmi', 'B', 'aadhar_lakshmiB_Boobalan.jpg', 'Boobalan', '1992-09-08', 'Female', 903272950023, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902),
+(24, 'Poovarasan', 'B', 'aadhar_PoovarasanB_Boobalan.jpg', 'Boobalan', '1992-09-08', 'Male', 196804360024, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902),
+(25, 'Kanthan', 'B', 'aadhar_KanthanB_Boobalan.jpg', 'Boobalan', '1999-09-08', 'Male', 176077510025, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 89409000),
+(26, 'MohanRaj', 'M', 'aadhar_MohanRajM_malayalathan.jpg', 'malayalathan', '1999-09-08', 'Male', 950734460026, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 88888888),
+(27, 'Maha', 'M', 'aadhar_MahaM_malayalathan.jpg', 'malayalathan', '1999-09-08', 'Female', 280266050027, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 88888888),
+(28, 'Manikandan', 'M', 'aadhar_ManikandanM_malayalathan.jpg', 'malayalathan', '1999-09-08', 'Female', 825406840028, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 88888888),
+(29, 'Jayakumar', 'J', 'aadhar_JayakumarJ_Jaganathan.jpg', 'Jaganathan', '1999-09-08', 'Male', 504744270029, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 88888777),
+(30, 'sugupathy', 'K', 'aadhar_sugupathyK_Kaththavarayan.jpg', 'Kaththavarayan', '1999-09-08', 'Male', 286990830030, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 888445555),
+(31, 'raj', 'K', 'aadhar_rajK_Kaththavarayan.jpg', 'Kaththavarayan', '1999-09-08', 'Male', 641942270031, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 888445555),
+(32, 'Siva', 'K', 'aadhar_SivaK_raj.jpg', 'raj', '1999-09-08', 'Male', 747870010032, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 888445555),
+(33, 'Selva', 'K', 'aadhar_SelvaK_kumar.jpg', 'kumar', '1999-09-08', 'Male', 395453550033, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 888445555),
+(34, 'Selvakumar', 'K', 'aadhar_SelvakumarK_kumaran.jpg', 'kumaran', '1999-09-08', 'Male', 642068120034, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 88844333),
+(35, 'ramya', 'K', 'aadhar_ramyaK_kumaran.jpg', 'kumaran', '1999-09-08', 'Male', 203020210035, 'mariyamm koil street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 88844333),
+(36, 'priya', 'K', 'aadhar_priyaK_kumaran.jpg', 'kumaran', '1999-09-08', 'Male', 787640160036, 'A2 street', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 88844333),
+(37, 'pradeep', 'r', 'aadhar_pradeepr_Ramkumar.jpg', 'Ramkumar', '0999-09-08', 'Male', 587211760037, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902),
+(38, 'praveen', 'r', 'aadhar_praveenr_Ramkumar.jpg', 'Ramkumar', '0999-09-08', 'Male', 718427750038, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902),
+(39, 'rajkumar', 'r', 'aadhar_rajkumarr_Ramkumar.jpg', 'Ramkumar', '0999-09-08', 'Male', 827584600039, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902),
+(40, 'ravi', 'r', 'aadhar_ravir_ramachanthar.jpg', 'ramachanthar', '0999-09-08', 'Male', 785695460040, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902),
+(41, 'ramachanthar', 'g', 'aadhar_ramachantharg_Ganapathy.jpg', 'Ganapathy', '0999-09-08', 'Male', 986310590041, 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 894090088);
 
 -- --------------------------------------------------------
 
@@ -97,10 +103,11 @@ CREATE TABLE `candidate_list` (
 --
 
 INSERT INTO `candidate_list` (`id`, `name`, `photo`, `dob`, `gender`, `symbol_name`, `symbol_logo`, `party_name`, `address`, `district`, `thaluk`, `state`, `pin_no`, `phone`, `fathername`, `post`, `acnumber`, `voter_id`, `time`) VALUES
-(21, 'suresh r', 'C_ABC0056_c.jpg', '1995-12-05', 'Male', 'Home', 'S_ABC0056_s.jpg', 'A.B.C', 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902, 'rajendhiran', 'Naraiyur', 74, 'ABC0056', '2019-04-05 03:06:41'),
-(23, 'Ragini R', 'C_ABC0058_c.jpg', '1994-12-08', 'Female', 'Sun rise', 'S_ABC0058_s.jpg', 'Autonomy', '#364/1,mariyamman koil st,thansingupalaym', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 999999999, 'rajendhiran', 'Naraiyur', 74, 'ABC0058', '2019-04-05 03:12:12'),
-(25, 'Mohanraj M', 'C_ABC0068_c.jpg', '1999-06-19', 'Male', 'ladder', 'S_ABC0068_s.jpg', 'Autonomy', 'A2 streat', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 9999999, 'malayalathan', 'kilinjikuppam', 155, 'ABC0068', '2019-04-05 04:45:14'),
-(26, 'RajaSima P', 'C_ABC0069_c.jpg', '1998-11-30', 'Male', 'Mango', 'S_ABC0069_s.jpg', 'P.Q.R.S', 'mariyamman koil street', 'Villupuram', 'Vikaravandi', 'Tamil nadu', 605102, 98948434333, 'Parthipan', 'T.M.kuppam', 75, 'ABC0069', '2019-04-05 06:16:54');
+(27, 'suresh R', 'C_ABC0082_c.jpg', '1995-12-04', 'Male', 'Mango', 'S_ABC0082_s.jpg', 'P.Q.R.S', 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902, 'Rajendhiran', 'Naraiyur', 74, 'ABC0082', '2019-04-07 16:53:48'),
+(29, 'pradeep r', 'C_ABC0077_c.jpg', '0999-09-08', 'Male', 'HOME', 'S_ABC0077_s.jpg', 'Autonomy', 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 8940900902, 'Ramkumar', 'Naraiyur', 74, 'ABC0077', '2019-04-07 16:59:46'),
+(30, 'Chitra R', 'C_ABC0081_c.jpg', '9999-12-04', 'Female', 'Sun rise', 'S_ABC0081_s.jpg', 'A.B.C', 'A2 streat', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 894090333, 'Rajendhiran', 'Naraiyur', 74, 'ABC0081', '2019-04-07 17:02:51'),
+(31, 'priya K', 'C_ABC0083_c.jpg', '1999-09-08', 'Male', 'Mango', 'S_ABC0083_s.jpg', 'P.Q.R.S', 'A2 street', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 894090333, 'kumaran', 'kilinjikuppam', 155, 'ABC0083', '2019-04-07 17:04:08'),
+(32, 'Jayakumar J', 'C_ABC0090_c.jpg', '1999-09-08', 'Male', 'two leafs', 'S_ABC0090_s.jpg', 'X.Y.Z', 'mariyamm koil street', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 894090333, 'Jaganathan', 'kilinjikuppam', 155, 'ABC0090', '2019-04-07 17:06:24');
 
 -- --------------------------------------------------------
 
@@ -131,18 +138,27 @@ CREATE TABLE `ECdb_table` (
 --
 
 INSERT INTO `ECdb_table` (`id`, `name`, `photo`, `father_name`, `gender`, `voter_id`, `dob`, `address`, `pin_code`, `post`, `Assembly_constituency`, `district`, `thaluk`, `state`, `phone`) VALUES
-(54, 'Chitra R', 'voter_ChitraR_rajendhiran_#364/1,mariyamman koil st,thansingupalaym_undefined.jpg', 'rajendhiran', 'Female', 'ABC0054', '1977-12-08', '#364/1,mariyamman koil st,thansingupalaym', 605108, 'Naraiyur', 74, 'Villupuram', 'Villupuram', 'Tamil Nadu', 8940900904),
-(56, 'suresh r', 'voter_sureshr_rajendhiran_A2 streat_undefined.jpg', 'rajendhiran', 'Male', 'ABC0056', '1995-12-05', 'A2 streat', 605108, 'Naraiyur', 74, 'Villupuram', 'Villupuram', 'Tamil Nadu', 8940900902),
-(57, 'Ezhil R', 'voter_EzhilR_Ram_#364/1,mariyamman koil st_undefined.jpg', 'Ram', 'Male', 'ABC0057', '1994-12-08', '#364/1,mariyamman koil st', 605108, 'Naraiyur', 74, 'Villupuram', 'Villupuram', 'Tamil Nadu', 8940900903),
-(58, 'Ragini R', 'voter_RaginiR_rajendhiran_#364/1,mariyamman koil st,thansingupalaym_undefined.jpg', 'rajendhiran', 'Female', 'ABC0058', '1994-12-08', '#364/1,mariyamman koil st,thansingupalaym', 605108, 'Naraiyur', 74, 'Villupuram', 'Villupuram', 'Tamil Nadu', 8940900905),
-(59, 'Rajendhiran R', 'voter_RajendhiranR_Ram_#364/1,mariyamman koil st,thansingupalaym_undefined.jpg', 'Ram', 'Male', 'ABC0059', '1967-12-08', '#364/1,mariyamman koil st,thansingupalaym', 605108, 'Naraiyur', 74, 'Villupuram', 'Villupuram', 'Tamil Nadu', 89409009046),
-(60, 'maha M', 'voter_mahaM_Malai_#364,mariyamman koil st,pudupuncholaikuppam_undefined.jpg', 'Malai', 'Female', 'ABC0060', '1995-03-10', '#364,mariyamman koil st,pudupuncholaikuppam', 607004, 'kilinjikuppam', 155, 'cuddalore', 'Cuddalore', 'Tamil Nadu', 894090089),
-(62, 'jayakumar J', 'voter_jayakumarJ_Jaganathan_#364,mariyamman koil st,pudupuncholaikuppam_undefined.jpg', 'Jaganathan', 'Male', 'ABC0062', '1998-03-10', '#364,mariyamman koil st,pudupuncholaikuppam', 607004, 'kilinjikuppam', 155, 'cuddalore', 'Cuddalore', 'Tamil Nadu', 894090089),
-(63, 'Sugupathy K', 'voter_SugupathyK_Kathavarayan_#364,mariyamman koil st,pudupuncholaikuppam_undefined.jpg', 'Kathavarayan', 'Male', 'ABC0063', '1995-03-10', '#364,mariyamman koil st,pudupuncholaikuppam', 607004, 'kilinjikuppam', 155, 'cuddalore', 'Cuddalore', 'Tamil Nadu', 894090089),
-(68, 'Mohanraj M', 'voter_MohanrajM_malayalathan_A2 streat_.jpg', 'malayalathan', 'Male', 'ABC0068', '1999-06-19', 'A2 streat', 605108, 'Kilinjikuppam', 155, 'Cuddalore', 'cuddalore', 'Tamil Nadu', 8940900902),
-(69, 'RajaSima P', 'voter_RajaSimaP_Parthipan_mariyamman koil street_.jpg', 'Parthipan', 'Male', 'ABC0069', '1998-11-30', 'mariyamman koil street', 605102, 'T.M.kuppam', 75, 'Villupuram', 'Vikaravandi', 'Tamil Nadu', 89509009000),
-(70, 'rajmohan m', 'voter_rajmohanm_jevva_mt street_.jpg', 'jevva', 'Male', 'ABC0070', '1984-03-03', 'mt street', 605102, 'T.M.kuppam', 75, 'Villupuram', 'Vikaravandi', 'Tamil Nadu', 9998988999),
-(71, 'kutty m', 'voter_kuttym_ranjith_mtstrr_.jpg', 'ranjith', 'Male', 'ABC0071', '1992-02-03', 'mtstrr', 605102, 'T.M.kuppam', 75, 'Villupuram', 'Vikaravandi', 'Tamil Nadu', 9798785859);
+(73, 'ramachanthar g', 'voter_ramachantharg_Ganapathy_A2 streat_.jpg', 'Ganapathy', 'Male', 'ABC0073', '0999-09-08', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 894090088),
+(74, 'ravi r', 'voter_ravir_ramachanthar_villupuram_.jpg', 'ramachanthar', 'Male', 'ABC0074', '0999-09-08', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 8940900902),
+(75, 'rajkumar r', 'voter_rajkumarr_Ramkumar_villupuram_.jpg', 'Ramkumar', 'Male', 'ABC0075', '0999-09-08', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 8940900902),
+(76, 'praveen r', 'voter_praveenr_Ramkumar_villupuram_.jpg', 'Ramkumar', 'Male', 'ABC0076', '0999-09-08', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 8940900902),
+(77, 'pradeep r', 'voter_pradeepr_Ramkumar_villupuram_.jpg', 'Ramkumar', 'Male', 'ABC0077', '0999-09-08', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 8940900902),
+(78, 'Kanthan B', 'voter_KanthanB_Boobalan_villupuram_.jpg', 'Boobalan', 'Male', 'ABC0078', '1999-09-08', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 89409000),
+(79, 'Poovarasan B', 'voter_PoovarasanB_Boobalan_villupuram_.jpg', 'Boobalan', 'Male', 'ABC0079', '1992-09-08', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 8940900902),
+(80, 'lakshmi B', 'voter_lakshmiB_Boobalan_villupuram_.jpg', 'Boobalan', 'Female', 'ABC0080', '1992-09-08', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 8940900902),
+(81, 'Chitra R', 'voter_ChitraR_Rajendhiran_villupuram_.jpg', 'Rajendhiran', 'Female', 'ABC0081', '9999-12-04', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 8940900902),
+(82, 'suresh R', 'voter_sureshR_Rajendhiran_villupuram_.jpg', 'Rajendhiran', 'Male', 'ABC0082', '1995-12-04', 'A2 streat', 605108, 'Naraiyur', 74, 'villupuram', 'villupuram', 'Tamil Nadu', 8940900902),
+(83, 'priya K', 'voter_priyaK_kumaran_Cuddalore_.jpg', 'kumaran', 'Male', 'ABC0083', '1999-09-08', 'A2 street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 88844333),
+(84, 'ramya K', 'voter_ramyaK_kumaran_Cuddalore_.jpg', 'kumaran', 'Male', 'ABC0084', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 88844333),
+(85, 'Selvakumar K', 'voter_SelvakumarK_kumaran_Cuddalore_.jpg', 'kumaran', 'Male', 'ABC0085', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 88844333),
+(86, 'Selva K', 'voter_SelvaK_kumar_Cuddalore_.jpg', 'kumar', 'Male', 'ABC0086', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 888445555),
+(87, 'Siva K', 'voter_SivaK_raj_Cuddalore_.jpg', 'raj', 'Male', 'ABC0087', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 888445555),
+(88, 'raj K', 'voter_rajK_Kaththavarayan_Cuddalore_.jpg', 'Kaththavarayan', 'Male', 'ABC0088', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 888445555),
+(89, 'sugupathy K', 'voter_sugupathyK_Kaththavarayan_Cuddalore_.jpg', 'Kaththavarayan', 'Male', 'ABC0089', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 888445555),
+(90, 'Jayakumar J', 'voter_JayakumarJ_Jaganathan_Cuddalore_.jpg', 'Jaganathan', 'Male', 'ABC0090', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 88888777),
+(91, 'Manikandan M', 'voter_ManikandanM_malayalathan_Cuddalore_.jpg', 'malayalathan', 'Male', 'ABC0091', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 88888888),
+(92, 'Maha M', 'voter_MahaM_malayalathan_Cuddalore_.jpg', 'malayalathan', 'Female', 'ABC0092', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 88888888),
+(93, 'MohanRaj M', 'voter_MohanRajM_malayalathan_Cuddalore_.jpg', 'malayalathan', 'Male', 'ABC0093', '1999-09-08', 'mariyamm koil street', 607004, 'kilinjikuppam', 155, 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 88888888);
 
 -- --------------------------------------------------------
 
@@ -164,16 +180,6 @@ CREATE TABLE `votesdb_table` (
   `post` text NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `votesdb_table`
---
-
-INSERT INTO `votesdb_table` (`id`, `candidate_id`, `people_id`, `acnumber`, `Symbol_name`, `party_name`, `district`, `thaluk`, `state`, `pin_code`, `post`, `time`) VALUES
-(14, 21, 'Abc0054', 74, 'Home', 'A.B.C', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 'Naraiyur', '2019-04-05 03:48:06'),
-(16, 23, 'ABC0056', 74, 'Sun rise', 'Autonomy', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 'Naraiyur', '2019-04-05 05:38:07'),
-(17, 25, 'Abc0060', 155, 'ladder', 'Autonomy', 'Cuddalore', 'Cuddalore', 'Tamil Nadu', 607004, 'kilinjikuppam', '2019-04-05 05:53:32'),
-(18, 23, 'ABC0058', 74, 'Sun rise', 'Autonomy', 'villupuram', 'villupuram', 'Tamil Nadu', 605108, 'Naraiyur', '2019-04-05 06:05:37');
 
 --
 -- Indexes for dumped tables
@@ -211,17 +217,17 @@ ALTER TABLE `votesdb_table`
 -- AUTO_INCREMENT for table `aadhardb_table`
 --
 ALTER TABLE `aadhardb_table`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `candidate_list`
 --
 ALTER TABLE `candidate_list`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `ECdb_table`
 --
 ALTER TABLE `ECdb_table`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 --
 -- AUTO_INCREMENT for table `votesdb_table`
 --
