@@ -47,8 +47,8 @@ class voterdb:
                 con.commit()
                 con.close()
         else:
-            return 2
-        return 0
+            return 2,0
+        return 0.0
     def SelectVote(*data):
         data=data[1]
         con=MySQLdb.connect("localhost","root","test","SmartProject")
