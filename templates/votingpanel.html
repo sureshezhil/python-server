@@ -65,7 +65,7 @@
     <div class="modal-content">
       <!--Header-->
       <div class="modal-header">
-        <center><h4 class="modal-title" id="myModalLabel">Choose the candidate whom you want vote for</h4></center>
+        <center><h4 class="modal-title" id="myModalLabel">Welcome...{[user.votername]} !!!<br> Choose the candidate whom you want vote for</h4></center>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
@@ -200,7 +200,8 @@ headers : {'Accept' : 'application/json'}
                     $scope.message="please enter valid voter id or try again later";
                 }else
                 {
-            $scope.CandidateCollections=response.data;
+            $scope.CandidateCollections=response.data[0];
+            $scope.user=response.data[1];
                 }
 
         });

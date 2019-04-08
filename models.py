@@ -41,7 +41,8 @@ class voterdb:
                     a.append(d)
                 con.commit()
                 con.close()
-                return a
+                b={"votername":i[1],"voterid":i[5]}
+                return a,b
             else:
                 con.commit()
                 con.close()

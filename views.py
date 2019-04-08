@@ -60,9 +60,10 @@ def votingpanel():
 @app.route("/api/v1/voterlogin",methods=['POST'])
 def voterlogin():
     json_data = request.json
-    result=voterdb.validate(json_data['voterid'])
+    result,b=voterdb.validate(json_data['voterid'])
     if(result):
-        return  jsonify(result)
+        print b
+        return  jsonify(result,b)
     elif(result):
         return  jsonify(result)
     else:
